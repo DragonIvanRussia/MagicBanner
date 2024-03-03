@@ -1,0 +1,36 @@
+body {
+    background-image: url("../static/stars.png");
+	background-repeat: repeat;
+}
+.about {
+	position: relative;
+	min-height:400px;
+    height: 70vh;
+}
+.about-text {
+    position: absolute;
+    bottom: 0px;
+	color: white;
+    margin-bottom: auto;
+}
+.about-text>p a {
+	color: white;
+}
+.about-text>p {
+	width: 35%;
+}
+.logo {
+    display: block;
+	vertical-align: top;
+	margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h4 {
+	color: white;
+    position: absolute;
+	text-align: right;
+    bottom: -10px;
+	text-align: right;
+	width: 98%;
+}
