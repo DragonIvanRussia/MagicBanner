@@ -3,13 +3,24 @@
 <head>
 	<title>Magic Banner</title>
 	<link href="{{url_for('static', filename='styles.css')}}" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
 </head>
 <body>
-	<img class="logo" src="{{url_for('static', filename='logo.png')}}">
-	<h4>Created by team "Function draw()"</h4>
-	<div class='about'>
-	<div class='about-text'><h2 lang='en-US'>Other things you should know about</h2>
-	<p lang='en-US'>Hello! This is a little project we made for our school assignment. The creators are: Shalunov Ivan, Ushinsky Denis and Vasilyev Kirill. We got inspired by the 90s era, especially by <a href="https://www.spacejam.com/1996/" target="_blank">Space Jam website from 1996.</a> This project allows you to quickly create profile banners for the most popular social media. In theory, it's easier to create them yourself, but we share this solution for all of lazy people out there ;)</p></div>
-	</div>
+	<nav class="navbar navbar-dark bg-dark">
+        {% if current_user.is_authenticated %}
+                <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
+                <a href="saves" class="btn btn-secondary">Check Saved Presets</a>
+        {% else %}
+                 <p>
+        <a class="btn btn-primary " href="/register">Register</a>
+        <a class="btn btn-success" href="/login">Login</a>
+            </p>
+        {% endif %}
+    </nav>
+	<a href="/"><img class="logo" src="{{url_for('static', filename='logo.png')}}"></a>
+    {% block content %}{% endblock %}
 </body>
 </html>
