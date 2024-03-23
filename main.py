@@ -7,5 +7,5 @@ def index():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run(port='80', host='192.168.1.51')
+    app.run(port='8080', host='192.168.1.51')
     
